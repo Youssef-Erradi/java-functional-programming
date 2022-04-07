@@ -30,5 +30,13 @@ public class Streams {
 		for (int i = 0; i < 10; i++)
 			people.add( new Person(r.nextInt(61)+10, r.nextInt(50)+50, r.nextInt(55)+150) );
 		people.forEach(System.out::println);
+		
+		// people taller than 185cm
+		List<Person> tallPeople = people.stream().filter(p -> p.height > 185).toList();
+		System.out.println(" Tall people:\n"+tallPeople);
+		
+		// people heavier than 85kg
+		List<Person> heavyPeople = people.stream().filter(p -> p.weight > 85).toList();
+		System.out.println(" Heavy people:\n"+heavyPeople);
 	}
 }
